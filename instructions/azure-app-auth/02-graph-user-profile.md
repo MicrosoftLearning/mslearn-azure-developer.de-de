@@ -200,8 +200,11 @@ Nachdem die App nun vollständig ist, können Sie sie ausführen.
 
 ## Bereinigen von Ressourcen
 
-Nachdem Sie die Übung abgeschlossen haben, sollten Sie die zuvor von Ihnen erstellte App-Registrierung löschen.
+Nachdem Sie die Übung beendet haben, sollten Sie die von Ihnen erstellten Cloud-Ressourcen löschen, um eine unnötige Ressourcennutzung zu vermeiden.
 
-1. Navigieren Sie im Azure-Portal zu der App-Registrierung, die Sie erstellt haben.
-1. Wählen Sie in der Symbolleiste die Option **Löschen** aus.
-1. Bestätigen Sie den Löschvorgang.
+1. Navigieren Sie in Ihrem Browser zum Azure-Portal [https://portal.azure.com](https://portal.azure.com) und melden Sie sich mit Ihren Azure-Anmeldeinformationen an, wenn Sie dazu aufgefordert werden.
+1. Navigieren Sie zu der Ressourcengruppe, die Sie erstellt haben, und zeigen Sie den Inhalt der in dieser Übung verwendeten Ressourcen an.
+1. Wählen Sie auf der Symbolleiste die Option **Ressourcengruppe löschen** aus.
+1. Geben Sie den Namen der Ressourcengruppe ein, und bestätigen Sie, dass Sie sie löschen möchten.
+
+> **VORSICHT:** Beim Löschen einer Ressourcengruppe werden alle darin enthaltenen Ressourcen gelöscht. Wenn Sie eine vorhandene Ressourcengruppe für diese Übung ausgewählt haben, werden alle vorhandenen Ressourcen ebenfalls gelöscht, die nicht in dieser Übung verwendet werden.
