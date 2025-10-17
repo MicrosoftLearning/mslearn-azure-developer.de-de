@@ -67,7 +67,7 @@ In diesem Abschnitt der Übung erstellen Sie mit der Azure CLI die erforderliche
     ```
     az appconfig create --location $location \
         --name $appConfigName \
-        --resource-group $resourceGroup
+        --resource-group $resourceGroup \
         --sku Free
     ```
 
