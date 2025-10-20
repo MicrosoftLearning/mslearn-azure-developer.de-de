@@ -63,6 +63,8 @@ In diesem Abschnitt wird mithilfe von Visual Studio Code ein lokales Azure Func
 
     <sup>1</sup> Je nach Ihren VS Code-Einstellungen müssen Sie möglicherweise die Option **Vorlagenfilter ändern** verwenden, um die vollständige Liste der Vorlagen zu sehen.
 
+1. Wenn Sie zu Folgendem aufgefordert werden: *Auswählen, wie Sie Ihr Projekt öffnen möchten*, wählen Sie **Im aktuellen Fenster öffnen** aus.
+
 1. Visual Studio Code verwendet die bereitgestellten Informationen und generiert ein Azure Functions-Projekt mit einem HTTP-Trigger. Die lokalen Projektdateien können im Explorer angezeigt werden.
 
     > **Hinweis:** Wenn VS Code ein Popup mit dem Titel **Vertrauen Sie den Autoren der Dateien in diesem Ordner?** anzeigt, wählen Sie die Schaltfläche **Ja, ich vertraue den Autoren** aus.
@@ -73,7 +75,11 @@ Dank der Integration zwischen Visual Studio Code und Azure Functions Core Tools 
 
 1. Stellen Sie sicher, dass das Terminal in Visual Studio Code geöffnet ist. Sie können das Terminal öffnen, indem Sie **Terminal** und dann **Neues Terminal** in der Menüleiste auswählen. 
 
-1. Drücken Sie **F5**, um das Funktions-App-Projekt im Debugger zu starten. Die Ausgabe der Core Tools wird im Bereich **Terminal** angezeigt. Ihre App wird im **Terminal**-Bereich gestartet. Der lokal ausgeführte URL-Endpunkt Ihrer über HTTP ausgelösten Funktion wird angezeigt.
+1. Drücken Sie **F5**, um das Funktions-App-Projekt im Debugger zu starten. Wenn Sie aufgefordert werden, ein Speicherkonto auszuwählen, wählen Sie **Vorerst überspringen** aus.
+
+    ![Screenshot des Dialogfelds, das zur Erstellung eines Speicherkontos auffordert](./media/01/select-storage-acct.png)
+
+1. Die Ausgabe der Core Tools wird im Bereich **Terminal** angezeigt. Der lokal ausgeführte URL-Endpunkt Ihrer über HTTP ausgelösten Funktion wird angezeigt.
 
     ![Ein Screenshot des Endpunkts Ihrer HTTP-getriggerten Funktion wird im Bedienfeld „Terminal“ angezeigt.](./media/01/run-function-local.png)
 
@@ -81,7 +87,7 @@ Dank der Integration zwischen Visual Studio Code und Azure Functions Core Tools 
 
     ![Screenshot, der die Position des Schritts „Funktion jetzt ausführen“ anzeigt.](./media/01/execute-function-local.png)
 
-1. Geben Sie unter **Enter request body** (Anforderungstext eingeben) den Text `{ "name": "Azure" }` für die Anforderungsnachricht ein. Drücken Sie die **EINGABETASTE**, um diese Anforderungsmeldung an Ihre Funktion zu senden. Wenn die Funktion lokal ausgeführt wird und eine Antwort zurückgibt, wird in Visual Studio Code eine Benachrichtigung ausgelöst.
+1. Unter **Enter request body** (Anforderungstext eingeben) wird `{ "name": "Azure" }` als Wert für den Text der Anforderungsnachricht angezeigt. Drücken Sie die **EINGABETASTE**, um diese Anforderungsmeldung an Ihre Funktion zu senden. Wenn die Funktion lokal ausgeführt wird und eine Antwort zurückgibt, wird in Visual Studio Code eine Benachrichtigung ausgelöst.
 
     Wählen Sie das Symbol der Benachrichtigungsglocke, um die Benachrichtigung anzuzeigen. Informationen zur Funktionsausführung werden im **Terminal**-Bereich angezeigt.
 
@@ -154,7 +160,7 @@ In diesem Abschnitt erstellen Sie die Azure-Ressourcen, die Sie benötigen, um I
 
     ![Screenshot der Option „Funktion jetzt ausführen“.](./media/01/execute-function-remote.png)
 
-1. Unter **Enter request body** (Anforderungstext eingeben) wird `{ "name": "Azure" }` als Wert für den Text der Anforderungsnachricht angezeigt. Drücken Sie die EINGABETASTE, um diese Anforderungsnachricht an Ihre Funktion zu senden.
+1. Unter **Enter request body** (Anforderungstext eingeben) wird `{ "name": "Azure" }` als Wert für den Text der Anforderungsnachricht angezeigt. Drücken Sie die **EINGABETASTE**, um diese Anforderungsmeldung an Ihre Funktion zu senden.
 
 1. Wenn die Funktion in Azure ausgeführt wird und eine Antwort zurückgibt, wird in Visual Studio Code eine Benachrichtigung ausgelöst. Wählen Sie das Symbol der Benachrichtigungsglocke, um die Benachrichtigung anzuzeigen.
 
