@@ -34,21 +34,22 @@ In diesem Abschnitt der Übung erstellen Sie eine Ressourcengruppe und Azure Sto
     az group create --location eastus2 --name myResourceGroup
     ```
 
-1. Erstellen Sie einige Variablen für die zu verwendenden CLI-Befehle. Dadurch wird die Menge an Eingaben reduziert. Ersetzen Sie **myLocation** durch den zuvor von Ihnen ausgewählten Wert. Der APIM-Name muss ein global eindeutiger Name sein, und mit dem folgenden Skript wird eine zufällige Zeichenfolge generiert. Ersetzen Sie **myEmail** durch eine E-Mail-Adresse, für die Sie Zugriff haben.
+1. Erstellen Sie einige Variablen für die zu verwendenden CLI-Befehle. Dadurch wird die Menge an Eingaben reduziert. Ersetzen Sie **<myLocation>** durch den zuvor gewählten Wert. Der APIM-Name muss ein global eindeutiger Name sein, und mit dem folgenden Skript wird eine zufällige Zeichenfolge generiert. Ersetzen Sie **<myEmail>** durch eine E-Mail-Adresse, auf die Sie zugreifen können. Ersetzen Sie **<myResourceGroup>** durch den zuvor gewählten Wert.
 
     ```bash
     myApiName=import-apim-$RANDOM
-    myLocation=myLocation
-    myEmail=myEmail
+    myLocation=<myLocation>
+    myEmail=<myEmail>
+    myResourceGroup=<myResourceGroup>
     ```
 
-1. Erstellen einer APIM-Instanz. Der Befehl **az apim create** wird zum Erstellen einer Instanz verwendet. Ersetzen Sie **myResourceGroup** durch den zuvor von Ihnen ausgewählten Wert.
+1. Erstellen einer APIM-Instanz. Der Befehl **az apim create** wird zum Erstellen einer Instanz verwendet. 
 
     ```bash
     az apim create -n $myApiName \
         --location $myLocation \
         --publisher-email $myEmail  \
-        --resource-group myResourceGroup \
+        --resource-group $myResourceGroup \
         --publisher-name Import-API-Exercise \
         --sku-name Consumption 
     ```
@@ -75,22 +76,10 @@ In diesem Abschnitt wird gezeigt, wie Sie eine Back-End-API mit OpenAPI-Spezifik
 
     | Einstellung | Wert | BESCHREIBUNG |
     |--|--|--|
-    | **OpenAPI-Spezifikation** | `https://bigconference.azurewebsites.net/` | Verweist auf den Dienst, der die API implementiert. Anforderungen werden an diese Adresse weitergeleitet. Die meisten erforderlichen Informationen im Formular werden automatisch aufgefüllt, nachdem Sie diesen Wert eingegeben haben. |
-    | **URL-Schema** | Wählen Sie **HTTPS** aus. | Definiert die Sicherheitsstufe des HTTP-Protokolls, das von der API akzeptiert wird. |
+    | **OpenAPI-Spezifikation** | `https://petstore3.swagger.io/api/v3/openapi.json` | Verweist auf den Dienst, der die API implementiert. Anforderungen werden an diese Adresse weitergeleitet. Die meisten erforderlichen Informationen im Formular werden automatisch aufgefüllt, nachdem Sie diesen Wert eingegeben haben. |
+    | **URL-Schema** | Stellen Sie sicher, dass **HTTPS** ausgewählt ist. | Definiert die Sicherheitsstufe des HTTP-Protokolls, das von der API akzeptiert wird. |
 
 1. Klicken Sie auf **Erstellen**.
-
-## Konfigurieren der API-Einstellungen
-
-Die *Big Conference-API* wird erstellt. Jetzt können Sie die API-Einstellungen zu konfigurieren. 
-
-1. Wählen Sie im Menü **Einstellungen** aus.
-
-1. Geben Sie in das Feld **Webdienst-URL** `https://bigconference.azurewebsites.net/` ein.
-
-1. Deaktivieren Sie das Kontrollkästchen **Abonnement erforderlich**.
-
-1. Wählen Sie **Speichern**.
 
 ## Testen der API
 
@@ -98,11 +87,13 @@ Nachdem die API importiert und konfiguriert wurde, ist es an der Zeit, die API z
 
 1. Wählen Sie auf der Menüleiste **Testen** aus. Dadurch werden alle in der API verfügbaren Vorgänge angezeigt.
 
-1. Suchen Sie nach dem Vorgang **Speakers_Get**, und wählen Sie ihn aus. 
+1. Suchen Sie nach **Haustiere nach Status suchen**, und wählen Sie es aus. ausgeführt werden müssen. 
 
 1. Wählen Sie **Send** (Senden) aus. Möglicherweise müssen Sie auf der Seite nach unten scrollen, um die HTTP-Antwort anzuzeigen.
 
     Das Back-End antwortet mit **200 OK** und einigen Daten.
+
+1. Wenn Sie verschiedene Ergebnisse ausprobieren möchten, können Sie im Abschnitt **Vorlagenparameter** einen anderen **Status** auswählen. Wählen Sie die Dropdownliste unter **WERT** aus, und wählen Sie einen anderen Status. Wählen Sie dann **Senden** aus, um die neuen Ergebnisse anzuzeigen.
 
 ## Bereinigen von Ressourcen
 
